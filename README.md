@@ -88,4 +88,4 @@ Esta es una **demostración académica**, no un sistema institucional en producc
 
 ## 13. Autoría
 
-Proyecto elaborado y adaptado por el/la estudiante como parte de una evaluación académica, con revisión propia del código y apoyo documentado de GitHub Copilot.
+Proyecto elaborado y adaptado por JOHANNI ANGIE STEPHANI QUISPE CCACCYA como parte de una evaluación académica, con revisión propia del código y apoyo documentado de GitHub Copilot.

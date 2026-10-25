@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="TicketFlow: gestor de incidencias y solicitudes para equipos de soporte TI." />
+  <title>TicketFlow | Gestión de soporte TI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">T</span><span><strong>TicketFlow</strong><small>Soporte inteligente</small></span></div>
+      <nav aria-label="Navegación principal"><a href="#resumen" class="nav-link active">◫ &nbsp; Panel general</a><a href="#tickets" class="nav-link">☰ &nbsp; Tickets</a><a href="#acerca" class="nav-link">ⓘ &nbsp; Acerca del proyecto</a></nav>
+      <div class="sidebar-bottom"><div class="status-dot"></div><span>Datos guardados en este navegador</span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><p class="eyebrow">CENTRO DE SOPORTE</p><h1>Gestión de incidencias</h1><p class="muted">Organiza, prioriza y da seguimiento a tus solicitudes de TI.</p></div><button id="newTicket" class="btn primary">＋ Nuevo ticket</button></header>
+      <section id="resumen" aria-label="Indicadores" class="stats">
+        <article class="stat"><span>Total tickets</span><strong id="statTotal">0</strong><small>Registros creados</small></article>
+        <article class="stat"><span>Pendientes</span><strong id="statPending">0</strong><small>Por atender</small></article>
+        <article class="stat"><span>En proceso</span><strong id="statProgress">0</strong><small>En atención</small></article>
+        <article class="stat"><span>Resueltos</span><strong id="statResolved">0</strong><small>Atención finalizada</small></article>
+      </section>
+      <section class="panel" id="tickets"><div class="panel-heading"><div><h2>Registro de tickets</h2><p class="muted">Consulta, edita y gestiona las solicitudes registradas.</p></div><div class="actions"><button class="btn subtle" id="exportCsv">↓ Exportar CSV</button><button class="btn subtle" id="seedDemo">Cargar demo</button></div></div>
+        <div class="filters"><label><span>Buscar</span><input id="search" type="search" placeholder="Código, asunto, solicitante..." /></label><label><span>Estado</span><select id="filterStatus"><option value="">Todos</option><option>Pendiente</option><option>En proceso</option><option>Resuelto</option></select></label><label><span>Prioridad</span><select id="filterPriority"><option value="">Todas</option><option>Alta</option><option>Media</option><option>Baja</option></select></label><label><span>Tipo</span><select id="filterType"><option value="">Todos</option><option>Incidencia</option><option>Solicitud</option></select></label></div>
+        <div class="table-wrap"><table><thead><tr><th>Código</th><th>Asunto / Solicitante</th><th>Tipo</th><th>Prioridad</th><th>Estado</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody id="ticketRows"></tbody></table></div><div id="emptyState" class="empty" hidden>Sin resultados. Crea un ticket nuevo o ajusta los filtros.</div><div class="table-footer"><span id="countLabel">0 tickets</span><span>Los cambios se guardan automáticamente</span></div>
+      </section>
+      <section class="about" id="acerca"><h2>¿Qué resuelve TicketFlow?</h2><p>Los reportes de soporte suelen dispersarse en mensajes u hojas de cálculo. TicketFlow centraliza el registro y seguimiento de incidencias y solicitudes en una aplicación sencilla, adaptable y accesible desde el navegador.</p><p><strong>Proyecto demostrativo académico.</strong> Utiliza almacenamiento local (<code>localStorage</code>); no incluye autenticación, servidor ni datos compartidos entre usuarios.</p></section>
+    </main>
+  </div>
+  <dialog id="ticketDialog" aria-labelledby="dialogTitle"><form id="ticketForm" novalidate><div class="modal-head"><div><p class="eyebrow">MESA DE SERVICIOS</p><h2 id="dialogTitle">Nuevo ticket</h2></div><button type="button" id="closeDialog" class="icon-btn" aria-label="Cerrar">✕</button></div><input type="hidden" id="ticketId" /><div class="form-grid"><label class="wide">Asunto <input required id="subject" maxlength="100" placeholder="Ej. No funciona conexión de red" /></label><label>Solicitante <input required id="requester" maxlength="80" placeholder="Nombre completo" /></label><label>Área <input required id="area" maxlength="70" placeholder="Ej. Administración" /></label><label>Tipo <select id="type" required><option>Incidencia</option><option>Solicitud</option></select></label><label>Prioridad <select id="priority" required><option>Media</option><option>Alta</option><option>Baja</option></select></label><label class="wide">Estado <select id="status" required><option>Pendiente</option><option>En proceso</option><option>Resuelto</option></select></label><label class="wide">Descripción <textarea id="description" maxlength="600" rows="4" placeholder="Describe la necesidad o el error" required></textarea></label></div><p id="formError" class="form-error" role="alert" hidden></p><div class="modal-actions"><button class="btn subtle" type="button" id="cancelDialog">Cancelar</button><button class="btn primary" type="submit">Guardar ticket</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

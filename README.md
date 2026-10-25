@@ -61,14 +61,10 @@ EF_Copilot_TicketFlow/
 2. En el repositorio, ve a **Settings → Pages**.
 3. En **Build and deployment**, selecciona **Deploy from a branch**.
 4. Elige **main**, carpeta **/(root)** y pulsa **Save**.
-5. Revisa el enlace publicado, usualmente `https://TU_USUARIO.github.io/NOMBRE_REPOSITORIO/`.
+5. Revisa el enlace publicado, usualmente `https://github.com/JASQC16/TicketFlow`.
 6. Verifica desde una ventana privada que la aplicación y todas sus funciones se puedan abrir.
 
-## 9. GitHub Copilot — explicación y evidencias
-
-GitHub Copilot debe utilizarse de manera verificable durante tu trabajo en VS Code. Los prompts sugeridos están en `EVIDENCIA_COPILOT.md`. **No se afirma que Copilot se haya utilizado ya:** el estudiante debe ejecutar las interacciones, revisar las sugerencias e incluir capturas reales y las decisiones que tomó.
-
-## 10. Pruebas funcionales sugeridas
+## 9. Pruebas funcionales sugeridas
 
 | Prueba | Resultado esperado |
 | --- | --- |
@@ -80,14 +76,14 @@ GitHub Copilot debe utilizarse de manera verificable durante tu trabajo en VS Co
 | Exportar CSV | Se descarga el archivo `ticketflow_tickets.csv`. |
 | Eliminar un ticket (confirmar) | Desaparece la fila y se actualizan los indicadores. |
 
-## 11. Alcance y limitaciones
+## 10. Alcance y limitaciones
 
 Esta es una **demostración académica**, no un sistema institucional en producción. El almacenamiento en `localStorage` es por navegador/dispositivo; los datos no se comparten entre usuarios, no existe autenticación y no se recomienda registrar información personal real ni confidencial.
 
-## 12. Enlaces de entrega
+## 11. Enlaces de entrega
 
-- **Repositorio público:** [AGREGAR URL REAL]
-- **Aplicación en GitHub Pages:** [AGREGAR URL REAL]
+- **Repositorio público:** https://github.com/JASQC16/TicketFlow
+- **Aplicación en GitHub Pages:** https://jasqc16.github.io/TicketFlow/
 - **Video demostrativo (máximo 1 minuto):** [AGREGAR URL REAL]
 
 ## 13. Autoría
